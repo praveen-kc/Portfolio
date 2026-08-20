@@ -59,7 +59,15 @@ nav {
 h1{font-size:clamp(58px,10vw,130px);line-height:.88;letter-spacing:-.06em;margin:18px 0 30px;max-width:900px}
 .subtitle{font-size:clamp(18px,2.5vw,27px);max-width:690px;color:#e5e5e5}
 .meta{display:flex;gap:40px;flex-wrap:wrap;margin-top:48px}.meta div{min-width:125px}.meta b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#aaa}.meta span{font-size:16px}
-nav{height:68px;background:rgba(244,244,242,.94);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}
+.project-nav {
+  height: 68px;
+  background: rgba(244,244,242,.94);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+}
 .nav{max-width:var(--max);height:100%;padding:0 28px;margin:auto;display:flex;align-items:center;justify-content:space-between;font-weight:750}
 .nav small{color:var(--muted);font-weight:500}
 main{max-width:var(--max);margin:auto;padding:72px 28px}
@@ -105,7 +113,12 @@ footer{padding:42px 28px;text-align:center;color:var(--muted);font-size:13px}
 </div>
 </div>
 </header>
-<nav><div class="nav"><span>MSD ALLERGY RACE</span><small>Selected Unity Project Case Study</small></div></nav>
+<div class="project-nav">
+  <div class="nav">
+    <span>MSD ALLERGY RACE</span>
+    <small>Selected Unity Project Case Study</small>
+  </div>
+</div>
 <main>
 <p class="intro">An interactive corporate gaming experience combining <strong>Unity 3D gameplay, Kinect motion controls, data-driven mechanics and real-world gamification.</strong></p>
 
