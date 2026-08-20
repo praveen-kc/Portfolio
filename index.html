@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Praveen K C — Lead Unity Developer, XR Specialist and Creative Technologist.">
+<title>Praveen K C — Unity, XR & Interactive Experiences</title>
+<style>
+:root{
+  --black:#050505;
+  --white:#ffffff;
+  --ink:#171717;
+  --muted:#6d6d6d;
+  --line:#e8e8e8;
+  --soft:#f7f7f7;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,"Segoe UI",Arial,Helvetica,sans-serif;background:#fff;color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+nav{height:74px;background:var(--black);color:#fff;border-bottom:1px solid #202020}
+.nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between}
+.brand{font-size:.98rem;font-weight:750;letter-spacing:-.02em}
+.brand span{color:#8c8c8c;font-weight:500}
+.nav-links{display:flex;gap:26px;color:#a7a7a7;font-size:.88rem}
+.nav-links a:hover{color:#fff}
+.hero{background:var(--black);color:#fff;padding:90px 0 120px}
+.kicker,.section-label{font-size:.74rem;text-transform:uppercase;letter-spacing:.15em;font-weight:750}
+.kicker{color:#9b9b9b;margin-bottom:20px}
+.hero h1{max-width:1000px;margin:0;font-size:clamp(3.5rem,9vw,8.2rem);line-height:.93;letter-spacing:-.075em}
+.hero h1 span{color:#969696}
+.hero-copy{margin:34px 0 0;max-width:790px;font-size:clamp(1.08rem,2vw,1.32rem);line-height:1.7;color:#bdbdbd}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:42px}
+.button{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;font-size:.9rem;font-weight:650;border:1px solid transparent}
+.button.primary{background:#fff;color:#111}
+.button.secondary{border-color:#3b3b3b;color:#ddd}
+.button:hover{transform:translateY(-1px)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:90px;border-top:1px solid #292929}
+.stat{padding:23px 20px 0 0;border-right:1px solid #292929}
+.stat+.stat{padding-left:24px}
+.stat:last-child{border-right:0}
+.stat strong{display:block;font-size:1.7rem;letter-spacing:-.04em}
+.stat span{display:block;font-size:.78rem;color:#858585;margin-top:3px;text-transform:uppercase;letter-spacing:.1em}
+section{padding:110px 0}
+.section-label{color:#777;margin-bottom:18px}
+.section-title{font-size:clamp(2.2rem,5vw,4.7rem);letter-spacing:-.06em;line-height:1.02;margin:0;max-width:800px}
+.intro{display:grid;grid-template-columns:.8fr 1.5fr;gap:80px}
+.intro-copy{font-size:1.13rem;color:#555;max-width:700px}
+.intro-copy p:first-child{margin-top:0}
+.intro-copy strong{color:#222}
+.projects{padding-top:0}
+.project-list{margin-top:58px;border-top:1px solid var(--line)}
+.project{display:grid;grid-template-columns:110px minmax(220px,1fr) minmax(260px,1.25fr) 50px;gap:30px;align-items:center;padding:31px 0;border-bottom:1px solid var(--line);transition:padding .2s ease}
+.project:hover{padding-left:12px;padding-right:12px;background:#fafafa}
+.project-index{font-size:.8rem;color:#999}
+.project h3{margin:0;font-size:clamp(1.35rem,2.4vw,2.2rem);letter-spacing:-.04em;line-height:1.1}
+.project p{margin:0;color:#6c6c6c;font-size:.95rem}
+.arrow{font-size:1.6rem;text-align:right;color:#777}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{font-size:.72rem;padding:5px 9px;border:1px solid #e2e2e2;color:#666;background:#fafafa}
+.about{background:var(--soft)}
+.expertise{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:55px}
+.expertise article{padding:28px;border:1px solid #e6e6e6;background:#fff}
+.expertise h3{font-size:1.05rem;margin:0 0 9px}
+.expertise p{font-size:.93rem;color:#707070;margin:0}
+.platforms{padding-bottom:110px}
+.platform-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:38px}
+.platform{padding:9px 14px;border:1px solid #ddd;font-size:.88rem;color:#444}
+.cta{background:#050505;color:#fff}
+.cta-grid{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end}
+.cta h2{font-size:clamp(2.5rem,5vw,5rem);letter-spacing:-.065em;line-height:1;margin:0;max-width:820px}
+.cta p{color:#aaa;margin:22px 0 0;max-width:650px}
+footer{background:#050505;border-top:1px solid #202020;color:#888;padding:28px 0 42px;font-size:.8rem}
+.footer-row{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:800px){
+  .container{width:min(var(--max),calc(100% - 40px))}
+  nav{height:62px}.nav-links{gap:15px;font-size:.78rem}
+  .hero{padding:72px 0 80px}.stats{margin-top:60px}
+  .intro{grid-template-columns:1fr;gap:20px}
+  section{padding:75px 0}
+  .project{grid-template-columns:45px 1fr 30px;gap:16px}
+  .project p{grid-column:2/4}
+  .project-index{align-self:start}.arrow{grid-column:3;grid-row:1}
+  .expertise{grid-template-columns:1fr}
+  .cta-grid{grid-template-columns:1fr}.cta-grid .button{justify-self:start}
+}
+@media(max-width:540px){
+  .nav-links a:not(:last-child){display:none}
+  .stats{grid-template-columns:1fr}.stat,.stat+.stat{padding:16px 0;border-right:0;border-bottom:1px solid #292929}
+  .stat:last-child{border-bottom:0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="./">PRAVEEN K C <span>/ Portfolio</span></a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="kicker">Lead Unity Developer · XR Specialist · Creative Technologist</div>
+    <h1>I build <span>interactive worlds.</span></h1>
+    <p class="hero-copy">13+ years creating immersive Unity experiences across games, VR, AR, simulations and real-time interactive products—combining technical depth with practical product delivery.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#work">Explore Selected Work</a>
+      <a class="button secondary" href="#about">About My Work</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>13+</strong><span>Years Experience</span></div>
+      <div class="stat"><strong>8+</strong><span>Platforms Delivered</span></div>
+      <div class="stat"><strong>XR · Games · AI</strong><span>Core Focus</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="work">
+  <div class="container">
+    <div class="section-label">Selected Projects</div>
+    <div class="intro">
+      <h2 class="section-title">Work across simulation, games and immersive technology.</h2>
+      <div class="intro-copy">
+        <p>Each project below has its own dedicated case study. The case-study pages follow a shared visual system: <strong>a focused dark introduction followed by a clean, detailed project presentation.</strong></p>
+        <p>This portfolio brings together selected work across VR training, industrial simulation, interactive learning, games, automotive visualization and 3D design.</p>
+      </div>
+    </div>
+
+    <div class="project-list">
+      <a class="project" href="msd-allergy-race/">
+        <div class="project-index">01</div>
+        <div><h3>MSD Allergy Race</h3><div class="tags"><span class="tag">Unity</span><span class="tag">Mobile Game</span></div></div>
+        <p>An interactive game experience designed to communicate allergy-related concepts through accessible gameplay.</p>
+        <div class="arrow">→</div>
+      </a>
+
+      <a class="project" href="uti-simulation/">
+        <div class="project-index">02</div>
+        <div><h3>UTI Simulation</h3><div class="tags"><span class="tag">Unity</span><span class="tag">VR</span><span class="tag">Simulation</span></div></div>
+        <p>A high-fidelity ultrasonic immersion testing simulation for realistic non-destructive testing training.</p>
+        <div class="arrow">→</div>
+      </a>
+
+      <a class="project" href="tooling-u-virtual-labs/">
+        <div class="project-index">03</div>
+        <div><h3>Tooling U Virtual Labs</h3><div class="tags"><span class="tag">Unity</span><span class="tag">VR</span><span class="tag">WebGL</span></div></div>
+        <p>Interactive manufacturing and industrial training simulations built for scalable learning experiences.</p>
+        <div class="arrow">→</div>
+      </a>
+
+      <a class="project" href="clite-virtual-lab/">
+        <div class="project-index">04</div>
+        <div><h3>Clite Virtual Lab</h3><div class="tags"><span class="tag">Unity</span><span class="tag">Education</span><span class="tag">Simulation</span></div></div>
+        <p>Interactive virtual laboratory experiences designed to make practical learning more accessible.</p>
+        <div class="arrow">→</div>
+      </a>
+
+      <a class="project" href="nissan-driving-simulator/">
+        <div class="project-index">05</div>
+        <div><h3>Nissan Driving Simulator</h3><div class="tags"><span class="tag">Unity</span><span class="tag">Driving</span><span class="tag">Simulation</span></div></div>
+        <p>An interactive automotive driving experience focused on real-time simulation and vehicle interaction.</p>
+        <div class="arrow">→</div>
+      </a>
+
+      <a class="project" href="yucad-design-studio/">
+        <div class="project-index">06</div>
+        <div><h3>YUCAD Design Studio</h3><div class="tags"><span class="tag">Unity</span><span class="tag">WebGL</span><span class="tag">VR</span></div></div>
+        <p>A connected 3D interior design and immersive visualization experience spanning browser, mobile and VR.</p>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="expertise">
+  <div class="container">
+    <div class="section-label">Expertise</div>
+    <h2 class="section-title">The systems behind the experience.</h2>
+    <div class="expertise">
+      <article><h3>Unity & Gameplay</h3><p>Unity 3D, C#, gameplay systems, interaction design, architecture and performance optimization.</p></article>
+      <article><h3>XR Development</h3><p>VR, AR, OpenXR, Meta Quest, HTC Vive, AR Foundation and immersive interaction systems.</p></article>
+      <article><h3>Graphics & Real-Time 3D</h3><p>URP, HDRP, shaders, HLSL, Shader Graph, real-time rendering and 3D optimization.</p></article>
+      <article><h3>Simulation & Training</h3><p>Industrial workflows, procedural interactions, virtual labs and enterprise training applications.</p></article>
+      <article><h3>Cross-Platform Delivery</h3><p>Windows, Android, iOS, WebGL and standalone XR devices.</p></article>
+      <article><h3>Emerging AI</h3><p>Conversational AI, local AI pipelines, speech systems, computer vision and interactive avatars.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="platforms">
+  <div class="container">
+    <div class="section-label">Platforms</div>
+    <h2 class="section-title">Built and shipped across.</h2>
+    <div class="platform-row">
+      <span class="platform">Meta Quest</span><span class="platform">HTC Vive</span>
+      <span class="platform">Oculus Rift</span><span class="platform">Kinect</span>
+      <span class="platform">Windows</span><span class="platform">Android</span>
+      <span class="platform">iOS</span><span class="platform">WebGL</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="about">
+  <div class="container cta-grid">
+    <div>
+      <div class="section-label" style="color:#777">Portfolio</div>
+      <h2>Focused on building what comes next.</h2>
+      <p>This collection is an evolving archive of selected projects and case studies spanning interactive entertainment, enterprise simulation and immersive technology.</p>
+    </div>
+    <a class="button primary" href="#work">View Projects</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© 2026 Praveen K C</span>
+    <span>Unity · XR · Interactive Experiences</span>
+  </div>
+</footer>
+</body>
+</html>
