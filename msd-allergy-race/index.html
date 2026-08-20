@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSD Allergy Race | Unity 3D Interactive Experience</title>
+<meta name="description" content="MSD Allergy Race — a Unity 3D interactive racing and gamification experience using Kinect motion controls.">
+<style>
+:root{--bg:#f4f4f2;--ink:#151515;--muted:#686868;--line:#d9d9d6;--card:#fff;--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.6}
+.hero{min-height:100vh;position:relative;background:#111;color:#fff;overflow:hidden;display:flex;align-items:end}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.48}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.15)),linear-gradient(0deg,rgba(0,0,0,.72),transparent 60%)}
+.hero-content{position:relative;z-index:1;width:min(var(--max),100%);margin:auto;padding:48px 28px 72px}
+.kicker,.label{text-transform:uppercase;letter-spacing:.15em;font-size:12px;font-weight:800;color:#aaa}
+h1{font-size:clamp(58px,10vw,130px);line-height:.88;letter-spacing:-.06em;margin:18px 0 30px;max-width:900px}
+.subtitle{font-size:clamp(18px,2.5vw,27px);max-width:690px;color:#e5e5e5}
+.meta{display:flex;gap:40px;flex-wrap:wrap;margin-top:48px}.meta div{min-width:125px}.meta b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#aaa}.meta span{font-size:16px}
+nav{height:68px;background:rgba(244,244,242,.94);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}
+.nav{max-width:var(--max);height:100%;padding:0 28px;margin:auto;display:flex;align-items:center;justify-content:space-between;font-weight:750}
+.nav small{color:var(--muted);font-weight:500}
+main{max-width:var(--max);margin:auto;padding:72px 28px}
+.intro{font-size:clamp(26px,4vw,48px);line-height:1.25;letter-spacing:-.035em;max-width:980px;margin:0 0 90px}
+.split{display:grid;grid-template-columns:260px 1fr;gap:70px;padding:70px 0;border-top:1px solid var(--line)}
+.split h2{font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-.045em;margin:0 0 22px}.split p{font-size:18px;color:#3f3f3f;margin:0}
+.roles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.role{background:var(--card);border:1px solid var(--line);padding:24px;border-radius:10px}.role strong{display:block;margin-bottom:7px}.role span{font-size:14px;color:var(--muted)}
+.feature{margin:70px 0 0}.feature img{width:100%;display:block;border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.13)}.caption{font-size:13px;color:var(--muted);margin:10px 2px 0}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}.gallery figure{margin:0}.gallery img{width:100%;height:100%;object-fit:cover;display:block;border-radius:10px}.gallery figcaption{font-size:13px;color:var(--muted);margin:8px 2px 0}
+.tech{margin-top:90px;padding:44px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.tech h2{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:0 0 20px}.tags{display:flex;flex-wrap:wrap;gap:10px}.tag{background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 15px;font-size:14px}
+footer{padding:42px 28px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:760px){.split{grid-template-columns:1fr;gap:28px}.roles,.gallery{grid-template-columns:1fr}.hero-content,main,.nav{padding-left:18px;padding-right:18px}.nav small{display:none}main{padding-top:48px}}
+</style>
+</head>
+<body>
+<header class="hero">
+<img src="images/cover.png" alt="MSD Allergy Race gameplay">
+<div class="hero-content">
+<div class="kicker">Unity 3D · Interactive Experience · Gamification</div>
+<h1>MSD<br>Allergy Race</h1>
+<p class="subtitle">A Kinect-controlled interactive racing experience that transformed employee performance data into personalised gameplay.</p>
+<div class="meta">
+<div><b>Role</b><span>Unity Developer</span></div>
+<div><b>Technology</b><span>Unity · C# · Kinect</span></div>
+<div><b>Platform</b><span>PC Interactive Installation</span></div>
+</div>
+</div>
+</header>
+<nav><div class="nav"><span>MSD ALLERGY RACE</span><small>Selected Unity Project Case Study</small></div></nav>
+<main>
+<p class="intro">An interactive corporate gaming experience combining <strong>Unity 3D gameplay, Kinect motion controls, data-driven mechanics and real-world gamification.</strong></p>
+
+<section class="split">
+<div class="label">01 / The Project</div>
+<div><h2>Racing driven by more than just player input.</h2><p>The experience was designed as an engaging event activation where participants could interact with a racing game using body gestures. Employee and sales-performance metrics were incorporated into the experience to influence gameplay and personalise the journey.</p></div>
+</section>
+
+<section class="split">
+<div class="label">02 / My Contribution</div>
+<div class="roles">
+<div class="role"><strong>Unity 3D Development</strong><span>Built the interactive application and gameplay systems using Unity and C#.</span></div>
+<div class="role"><strong>Kinect Integration</strong><span>Implemented body and hand gesture interactions for navigation and vehicle control.</span></div>
+<div class="role"><strong>Gameplay Systems</strong><span>Developed racing behaviour, vehicle controls, HUD elements and game-state logic.</span></div>
+<div class="role"><strong>Data-Driven Experience</strong><span>Connected performance-related values to gameplay presentation and player feedback.</span></div>
+<div class="role"><strong>Interactive UI</strong><span>Created gesture-driven menus, login, selection and instructional screens.</span></div>
+<div class="role"><strong>Event Deployment</strong><span>Prepared the experience for repeatable real-world use during the interactive event.</span></div>
+</div>
+</section>
+
+<section class="feature">
+<div class="label">03 / Gameplay</div>
+<img src="images/race-gameplay-blue.png" alt="MSD Allergy Race gameplay screen">
+<div class="caption">Real-time racing gameplay with HUD, performance indicators and track navigation.</div>
+</section>
+
+<section class="split">
+<div class="label">04 / Interaction Design</div>
+<div><h2>Physical gestures became the interface.</h2><p>The player used Kinect-based body movements and hand gestures to navigate menus and control the experience. The interface communicated each interaction clearly through large visual prompts, making it suitable for a public event environment.</p></div>
+</section>
+
+<div class="gallery">
+<figure><img src="images/welcome-screen.png" alt="Welcome screen"><figcaption>Welcome and gesture-driven start screen</figcaption></figure>
+<figure><img src="images/login-screen.png" alt="Login screen"><figcaption>Login and Kinect camera loading screen</figcaption></figure>
+<figure><img src="images/car-selection.png" alt="Car selection"><figcaption>Gesture-controlled vehicle selection</figcaption></figure>
+<figure><img src="images/manual-controls.png" alt="Control instructions"><figcaption>Motion-control instructions and gameplay tutorial</figcaption></figure>
+</div>
+
+<section class="feature">
+<div class="label">05 / Competitive Experience</div>
+<img src="images/race-leaderboard.png" alt="Leaderboard screen">
+<div class="caption">Leaderboard and player performance feedback.</div>
+</section>
+
+<section class="tech">
+<h2>Technology & Skills Demonstrated</h2>
+<div class="tags"><span class="tag">Unity 3D</span><span class="tag">C#</span><span class="tag">Microsoft Kinect</span><span class="tag">3D Game Development</span><span class="tag">Gameplay Programming</span><span class="tag">Interactive Simulation</span><span class="tag">Gamification</span><span class="tag">UI Development</span><span class="tag">Motion Interaction</span></div>
+</section>
+</main>
+<footer>MSD Allergy Race · Unity 3D Interactive Experience</footer>
+</body>
+</html>
