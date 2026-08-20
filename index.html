@@ -46,9 +46,13 @@ nav{height:74px;background:var(--black);color:#fff;border-bottom:1px solid #2020
 section{padding:110px 0}
 .section-label{color:#777;margin-bottom:18px}
 .section-title{font-size:clamp(2.2rem,5vw,4.7rem);letter-spacing:-.06em;line-height:1.02;margin:0;max-width:800px}
-.intro{display:grid;grid-template-columns:.8fr 1.5fr;gap:80px}
+.intro{display:block}
 .intro-copy{font-size:1.13rem;color:#555;max-width:700px}
 .intro-copy p:first-child{margin-top:0}
+#work .section-title{
+  max-width:1000px;
+  margin-bottom:28px;
+}
 .intro-copy strong{color:#222}
 .projects{padding-top:0}
 .project-list{margin-top:58px;border-top:1px solid var(--line)}
@@ -78,7 +82,7 @@ footer{background:#050505;border-top:1px solid #202020;color:#888;padding:28px 0
   .container{width:min(var(--max),calc(100% - 40px))}
   nav{height:62px}.nav-links{gap:15px;font-size:.78rem}
   .hero{padding:72px 0 80px}.stats{margin-top:60px}
-  .intro{grid-template-columns:1fr;gap:20px}
+  .intro{display:block}
   section{padding:75px 0}
   .project{grid-template-columns:45px 1fr 30px;gap:16px}
   .project p{grid-column:2/4}
@@ -97,7 +101,7 @@ footer{background:#050505;border-top:1px solid #202020;color:#888;padding:28px 0
 
 <nav>
   <div class="container nav-inner">
-    <a class="brand" href="./">PRAVEEN K C <span>/ Portfolio</span></a>
+    <a class="brand" href="./">PRAVEEN K C </a>
     <div class="nav-links">
       <a href="#work">Work</a>
       <a href="#expertise">Expertise</a>
@@ -108,9 +112,9 @@ footer{background:#050505;border-top:1px solid #202020;color:#888;padding:28px 0
 
 <header class="hero">
   <div class="container">
-    <div class="kicker">Lead Unity Developer · XR Specialist · Creative Technologist</div>
-    <h1>I build <span>interactive worlds.</span></h1>
-    <p class="hero-copy">13+ years creating immersive Unity experiences across games, VR, AR, simulations and real-time interactive products—combining technical depth with practical product delivery.</p>
+    <div class="kicker">Lead Unity Developer | Game, Interactive Simulation & XR Specialist | Creative Technologist</div>
+    <h1>I build the future of <span>virtual worlds.</span></h1>
+    <p class="hero-copy">13+ years building interactive experiences with Unity across Games, VR, AR, simulations and real-time 3D applications—combining technical leadership with hands-on development and product delivery.</p>
     <div class="hero-actions">
       <a class="button primary" href="#work">Explore Selected Work</a>
       <a class="button secondary" href="#about">About My Work</a>
@@ -118,7 +122,7 @@ footer{background:#050505;border-top:1px solid #202020;color:#888;padding:28px 0
     <div class="stats">
       <div class="stat"><strong>13+</strong><span>Years Experience</span></div>
       <div class="stat"><strong>8+</strong><span>Platforms Delivered</span></div>
-      <div class="stat"><strong>XR · Games · AI</strong><span>Core Focus</span></div>
+      <div class="stat"><strong>Games  ·  Simulation  ·  AI</strong><span>Core Focus</span></div>
     </div>
   </div>
 </header>
@@ -130,51 +134,52 @@ footer{background:#050505;border-top:1px solid #202020;color:#888;padding:28px 0
     <div class="intro">
       <h2 class="section-title">Work across simulation, games and immersive technology.</h2>
       <div class="intro-copy">
-        <p>Each project below has its own dedicated case study. The case-study pages follow a shared visual system: <strong>a focused dark introduction followed by a clean, detailed project presentation.</strong></p>
-        <p>This portfolio brings together selected work across VR training, industrial simulation, interactive learning, games, automotive visualization and 3D design.</p>
+        <p>A selection of projects spanning immersive training, industrial simulation, interactive learning, games and real-time 3D experiences. Each case study explores the challenge, the solution and the technology behind the work.</p>
       </div>
     </div>
 
     <div class="project-list">
-      <a class="project" href="msd-allergy-race/">
-        <div class="project-index">01</div>
-        <div><h3>MSD Allergy Race</h3><div class="tags"><span class="tag">Unity</span><span class="tag">Mobile Game</span></div></div>
-        <p>An interactive game experience designed to communicate allergy-related concepts through accessible gameplay.</p>
-        <div class="arrow">→</div>
-      </a>
-
       <a class="project" href="uti-simulation/">
-        <div class="project-index">02</div>
+        <div class="project-index">01</div>
         <div><h3>UTI Simulation</h3><div class="tags"><span class="tag">Unity</span><span class="tag">VR</span><span class="tag">Simulation</span></div></div>
-        <p>A high-fidelity ultrasonic immersion testing simulation for realistic non-destructive testing training.</p>
+        <p>A high-fidelity ultrasonic immersion testing simulation designed for realistic non-destructive testing training.</p>
         <div class="arrow">→</div>
       </a>
 
       <a class="project" href="tooling-u-virtual-labs/">
-        <div class="project-index">03</div>
+        <div class="project-index">02</div>
         <div><h3>Tooling U Virtual Labs</h3><div class="tags"><span class="tag">Unity</span><span class="tag">VR</span><span class="tag">WebGL</span></div></div>
-        <p>Interactive manufacturing and industrial training simulations built for scalable learning experiences.</p>
+        <p>Interactive manufacturing and industrial training simulations designed to deliver scalable, hands-on learning experiences.</p>
         <div class="arrow">→</div>
       </a>
-
-      <a class="project" href="clite-virtual-lab/">
+		<a class="project" href="msd-allergy-race/">
+        <div class="project-index">03</div>
+        <div><h3>MSD Allergy Race</h3><div class="tags"><span class="tag">Unity</span><span class="tag">Mobile Game</span></div></div>
+        <p>An interactive mobile game designed to communicate allergy-related concepts through accessible, engaging gameplay.</p>
+        <div class="arrow">→</div>
+      </a>
+	  <a class="project" href="conversational-ai/">
         <div class="project-index">04</div>
-        <div><h3>Clite Virtual Lab</h3><div class="tags"><span class="tag">Unity</span><span class="tag">Education</span><span class="tag">Simulation</span></div></div>
-        <p>Interactive virtual laboratory experiences designed to make practical learning more accessible.</p>
+        <div><h3>Conversational AI — Experience Center</h3><div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">Real-Time Avatars</span></div></div>
+        <p>A production conversational AI backend powering two real-time avatar personas with streaming speech, RAG and vision.</p>
         <div class="arrow">→</div>
       </a>
-
-      <a class="project" href="nissan-driving-simulator/">
+	  <a class="project" href="nissan-driving-simulator/">
         <div class="project-index">05</div>
         <div><h3>Nissan Driving Simulator</h3><div class="tags"><span class="tag">Unity</span><span class="tag">Driving</span><span class="tag">Simulation</span></div></div>
-        <p>An interactive automotive driving experience focused on real-time simulation and vehicle interaction.</p>
+        <p>An interactive driving simulator focused on real-time vehicle behavior, simulation and user interaction.</p>
         <div class="arrow">→</div>
       </a>
-
-      <a class="project" href="yucad-design-studio/">
+      <a class="project" href="clite-virtual-lab/">
         <div class="project-index">06</div>
+        <div><h3>Clite Virtual Lab</h3><div class="tags"><span class="tag">Unity</span><span class="tag">Education</span><span class="tag">Simulation</span></div></div>
+        <p>Interactive virtual laboratory experiences that make practical, hands-on learning more accessible.</p>
+        <div class="arrow">→</div>
+      </a>
+      <a class="project" href="yucad-design-studio/">
+        <div class="project-index">07</div>
         <div><h3>YUCAD Design Studio</h3><div class="tags"><span class="tag">Unity</span><span class="tag">WebGL</span><span class="tag">VR</span></div></div>
-        <p>A connected 3D interior design and immersive visualization experience spanning browser, mobile and VR.</p>
+        <p>A connected 3D interior design platform combining browser-based visualization, mobile access and immersive VR experiences.</p>
         <div class="arrow">→</div>
       </a>
     </div>
@@ -186,12 +191,12 @@ footer{background:#050505;border-top:1px solid #202020;color:#888;padding:28px 0
     <div class="section-label">Expertise</div>
     <h2 class="section-title">The systems behind the experience.</h2>
     <div class="expertise">
-      <article><h3>Unity & Gameplay</h3><p>Unity 3D, C#, gameplay systems, interaction design, architecture and performance optimization.</p></article>
+      <article><h3>Unity & Gameplay</h3><p>Unity, C#, gameplay and interaction systems, software architecture and performance optimization.</p></article>
       <article><h3>XR Development</h3><p>VR, AR, OpenXR, Meta Quest, HTC Vive, AR Foundation and immersive interaction systems.</p></article>
       <article><h3>Graphics & Real-Time 3D</h3><p>URP, HDRP, shaders, HLSL, Shader Graph, real-time rendering and 3D optimization.</p></article>
       <article><h3>Simulation & Training</h3><p>Industrial workflows, procedural interactions, virtual labs and enterprise training applications.</p></article>
       <article><h3>Cross-Platform Delivery</h3><p>Windows, Android, iOS, WebGL and standalone XR devices.</p></article>
-      <article><h3>Emerging AI</h3><p>Conversational AI, local AI pipelines, speech systems, computer vision and interactive avatars.</p></article>
+      <article><h3>Emerging AI</h3><p>Conversational AI, local AI pipelines, speech systems, computer vision and AI-driven interactive avatars.</p></article>
     </div>
   </div>
 </section>
@@ -199,7 +204,7 @@ footer{background:#050505;border-top:1px solid #202020;color:#888;padding:28px 0
 <section class="platforms">
   <div class="container">
     <div class="section-label">Platforms</div>
-    <h2 class="section-title">Built and shipped across.</h2>
+    <h2 class="section-title">Built and shipped across multiple platforms.</h2>
     <div class="platform-row">
       <span class="platform">Meta Quest</span><span class="platform">HTC Vive</span>
       <span class="platform">Oculus Rift</span><span class="platform">Kinect</span>
@@ -213,8 +218,8 @@ footer{background:#050505;border-top:1px solid #202020;color:#888;padding:28px 0
   <div class="container cta-grid">
     <div>
       <div class="section-label" style="color:#777">Portfolio</div>
-      <h2>Focused on building what comes next.</h2>
-      <p>This collection is an evolving archive of selected projects and case studies spanning interactive entertainment, enterprise simulation and immersive technology.</p>
+      <h2>Building interactive experiences that solve real problems.</h2>
+      <p>A selection of projects spanning interactive entertainment, enterprise simulation, immersive training and real-time 3D technology. This portfolio continues to evolve as new projects and experiments take shape.</p>
     </div>
     <a class="button primary" href="#work">View Projects</a>
   </div>
@@ -224,7 +229,7 @@ footer{background:#050505;border-top:1px solid #202020;color:#888;padding:28px 0
 <footer>
   <div class="container footer-row">
     <span>© 2026 Praveen K C</span>
-    <span>Unity · XR · Interactive Experiences</span>
+    <span>Lead Unity Developer | Game, Interactive Simulation & XR Specialist | Creative Technologist</span>
   </div>
 </footer>
 </body>

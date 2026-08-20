@@ -3,358 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="NISSAN Driving Simulator — Unity 3D driving simulation case study.">
+<meta name="description" content="NISSAN Driving Simulator — Unity 3D driving simulation case study by Praveen K C.">
 <title>NISSAN Driving Simulator | Praveen K C</title>
 <style>
 :root{
-  --black:#000;
-  --text:#171717;
-  --muted:#666;
-  --line:#e7e7e7;
-  --soft:#f7f7f7;
-  --max:1160px;
+  --ink:#141414;--muted:#686868;--line:#e8e8e8;--paper:#fff;
+  --soft:#f7f7f7;--accent:#3f7cff;--dark:#070809;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:#fff;
-  color:var(--text);
-  font-family:"Segoe UI",Inter,Arial,Helvetica,sans-serif;
-  line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-}
+body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65}
 .hero{
-  min-height:82vh;
-  background:#000;
-  color:#fff;
-  display:flex;
-  align-items:center;
+  position:relative;min-height:82vh;display:flex;align-items:flex-end;
+  overflow:hidden;background:#08090b;color:#fff;
 }
-.container{
-  width:min(calc(100% - 48px),var(--max));
-  margin:0 auto;
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.76) 38%,rgba(0,0,0,.12) 72%),
+    url("images/cover.png") right center/auto 100% no-repeat;
+  opacity:.95;
 }
-.hero-inner{padding:96px 0 110px;max-width:900px}
-.eyebrow{
-  margin:0 0 22px;
-  color:#a9a9a9;
-  font-size:.78rem;
-  font-weight:700;
-  letter-spacing:.14em;
-  text-transform:uppercase;
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.78),transparent 58%);
 }
-h1{
-  margin:0;
-  font-size:clamp(3rem,8vw,7rem);
-  line-height:.98;
-  letter-spacing:-.065em;
-  font-weight:800;
+.hero-content{position:relative;z-index:2;width:min(1180px,92%);margin:0 auto;padding:76px 0}
+.kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#c8c8c8;margin-bottom:18px}
+h1{font-size:clamp(3.2rem,8vw,7.4rem);line-height:.92;letter-spacing:-.06em;margin:0 0 24px;max-width:920px}
+.hero p{max-width:650px;color:#e5e5e5;font-size:1.15rem;margin:0}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.tag{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:7px 13px;font-size:.8rem;background:rgba(255,255,255,.04)}
+.wrap{width:min(1100px,90%);margin:auto}
+.intro{padding:105px 0 82px}
+.eyebrow{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h2{font-size:clamp(2rem,4vw,4rem);line-height:1.05;letter-spacing:-.045em;margin:10px 0 25px}
+.lead{font-size:1.28rem;max-width:880px;color:#383838}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:36px}
+.stat{background:#fff;padding:27px}
+.stat b{display:block;font-size:1.55rem;margin-bottom:4px}
+.stat span{font-size:.86rem;color:var(--muted)}
+.section{padding:88px 0;border-top:1px solid var(--line)}
+.soft{background:var(--soft)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start}
+.copy{font-size:1.05rem;color:#464646}
+.item{padding:24px 0;border-bottom:1px solid var(--line)}
+.item:first-child{border-top:1px solid var(--line)}
+.item h3{font-size:1.1rem;margin:0 0 7px}
+.item p{margin:0;color:var(--muted)}
+.architecture{border:1px solid var(--line);background:#fff;padding:34px;margin-top:32px}
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.node{
+  flex:1 1 150px;min-height:116px;padding:20px;
+  border:1px solid var(--line);margin:-1px 0 0 -1px;
+  display:flex;flex-direction:column;justify-content:center;
 }
-.hero-copy{
-  max-width:760px;
-  margin:32px 0 0;
-  color:#c9c9c9;
-  font-size:clamp(1.05rem,2vw,1.35rem);
-  line-height:1.65;
-}
-.meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px 30px;
-  margin-top:42px;
-  color:#a7a7a7;
-  font-size:.9rem;
-}
-.meta strong{color:#fff;font-weight:600}
-section{padding:100px 0}
-.section-soft{background:var(--soft)}
-.section-grid{
-  display:grid;
-  grid-template-columns:minmax(220px,.8fr) minmax(0,2fr);
-  gap:80px;
-}
-.section-label{
-  margin:0 0 12px;
-  color:#777;
-  font-size:.75rem;
-  font-weight:700;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-}
-h2{
-  margin:0;
-  font-size:clamp(2rem,4vw,3.5rem);
-  line-height:1.08;
-  letter-spacing:-.045em;
-}
-.lead{
-  margin:0;
-  font-size:1.18rem;
-  color:#303030;
-  max-width:760px;
-}
-p{margin:0 0 18px}
-p:last-child{margin-bottom:0}
-.contribution-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px;
-}
-.card{
-  padding:30px;
-  background:#fff;
+.node b{font-size:1rem;margin-bottom:4px}
+.node span{font-size:.82rem;color:var(--muted)}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:30px}
+.feature{background:#fff;padding:28px}
+.feature h3{margin:0 0 10px;font-size:1.05rem}
+.feature p{margin:0;color:var(--muted);font-size:.94rem}
+.stack{display:flex;gap:10px;flex-wrap:wrap}
+.stack span{padding:10px 15px;background:#fff;border:1px solid var(--line);font-size:.86rem}
+.code-note{padding:22px 25px;border-left:3px solid var(--accent);background:#fff;margin-top:28px;color:#555}
+.video-frame{
+  margin-top:30px;
+  width:100%;
+  aspect-ratio:16/9;
   border:1px solid var(--line);
-  border-radius:10px;
+  background:#000;
 }
-.card h3,.feature h3{
-  margin:0 0 10px;
-  font-size:1.08rem;
-  line-height:1.35;
-}
-.card p,.feature p{color:var(--muted);font-size:.96rem}
-.feature-list{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:0 56px;
-}
-.feature{
-  padding:26px 0;
-  border-bottom:1px solid var(--line);
-}
-.feature:nth-last-child(-n+2){border-bottom:0}
-.gallery{display:grid;gap:22px}
-.gallery-two{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:22px;
-}
-.shot{
-  margin:0;
-  background:#f1f1f1;
-  overflow:hidden;
-  border-radius:6px;
-  border:1px solid #ececec;
-}
-.shot img{
+.video-frame iframe{
   display:block;
   width:100%;
-  height:auto;
-  aspect-ratio:16/9;
-  object-fit:cover;
+  height:100%;
+  border:0;
 }
-figcaption{
-  padding:12px 15px 14px;
-  color:#777;
-  font-size:.85rem;
-}
-.tags{display:flex;flex-wrap:wrap;gap:10px}
-.tag{
-  padding:7px 13px;
-  border:1px solid #dedede;
-  border-radius:999px;
-  background:#f5f5f5;
-  color:#444;
-  font-size:.9rem;
-}
-.outcome{
-  max-width:820px;
-}
-.outcome p{
-  margin-top:24px;
-  font-size:1.18rem;
-  color:#444;
-}
-footer{
-  padding:36px 0;
-  border-top:1px solid var(--line);
-  color:#888;
-  font-size:.82rem;
-}
-@media(max-width:760px){
-  .container{width:min(calc(100% - 36px),var(--max))}
-  .hero{min-height:72vh}
-  .hero-inner{padding:72px 0 80px}
-  section{padding:64px 0}
-  .section-grid{grid-template-columns:1fr;gap:28px}
-  .contribution-grid,.feature-list,.gallery-two{grid-template-columns:1fr}
-  .feature:nth-last-child(2){border-bottom:1px solid var(--line)}
-  .meta{gap:8px 18px;margin-top:32px}
-  .card{padding:24px}
+.footer{background:#090909;color:#fff;padding:60px 0}
+.footer p{color:#aaa;margin:0}
+@media(max-width:780px){
+  .hero{min-height:76vh}
+  .hero::before{background:linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.5)),url("images/cover.png") 68% center/auto 100% no-repeat}
+  .hero-content{padding:58px 0}
+  .intro,.section{padding:66px 0}
+  .grid2{grid-template-columns:1fr;gap:35px}
+  .stats,.feature-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <div class="container">
-    <div class="hero-inner">
-      <p class="eyebrow">Driving Simulation · Unity 3D · PC</p>
-      <h1>NISSAN<br>Driving Simulator</h1>
-      <p class="hero-copy">
-        An immersive virtual driving experience developed for the NISSAN Driving Institute at KidZania, Kuwait, enabling young learners to practise essential driving skills in a safe and controlled 3D environment.
-      </p>
-      <div class="meta">
-        <span><strong>Platform</strong> PC</span>
-        <span><strong>Engine</strong> Unity 3D</span>
-        <span><strong>Studio</strong> ThinkHi</span>
-        <span><strong>Year</strong> 2016</span>
-      </div>
+  <div class="hero-content">
+    <div class="kicker">Driving Simulation · Unity 3D · 2016</div>
+    <h1>NISSAN<br>Driving Simulator</h1>
+    <p>An immersive virtual driving experience developed for the NISSAN Driving Institute at KidZania, Kuwait, enabling young learners to practise essential driving skills in a safe and controlled 3D environment.</p>
+    <div class="meta">
+      <span class="tag">Unity 3D</span>
+      <span class="tag">C#</span>
+      <span class="tag">PC Simulation</span>
+      <span class="tag">Vehicle Interaction</span>
+      <span class="tag">Interactive Training</span>
     </div>
   </div>
 </header>
 
 <main>
-  <section>
-    <div class="container section-grid">
-      <div>
-        <p class="section-label">Project Overview</p>
-        <h2>Learning to drive in a safe virtual environment.</h2>
-      </div>
-      <div>
-        <p class="lead">
-          The NISSAN Driving Simulator was designed as an interactive learning experience where young users could engage with a realistic virtual road environment and practise fundamental driving behaviour without the risks of real-world traffic.
-        </p>
-        <p>
-          The simulation combined vehicle controls, road systems, traffic behaviour and interactive scenarios into a focused driving experience suitable for a public, high-throughput installation environment. The objective was to make the interaction immediately understandable while maintaining a convincing sense of driving and spatial awareness.
-        </p>
+
+<section class="intro">
+  <div class="wrap">
+    <div class="eyebrow">The project</div>
+    <h2>Learning to drive in a safe virtual environment.</h2>
+    <p class="lead">The NISSAN Driving Simulator was designed as an interactive learning experience where young users could engage with a realistic virtual road environment and practise fundamental driving behaviour without the risks of real-world traffic.</p>
+
+    <div class="stats">
+      <div class="stat"><b>Unity 3D</b><span>Real-time interactive simulation</span></div>
+      <div class="stat"><b>PC</b><span>Public simulator installation</span></div>
+      <div class="stat"><b>KidZania</b><span>Learning experience for young participants</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap ">
+    <div>
+      <div class="eyebrow">The challenge</div>
+      <h2>Making driving concepts accessible through interaction.</h2>
+    
+    <p class="copy">
+      A driving simulator for young participants needed to balance believable vehicle behaviour with controls that were immediately understandable. The experience also had to communicate road awareness and driving behaviour without the risks or complexity of real-world traffic.
+      <br><br>
+      The simulation combined vehicle controls, road systems, traffic behaviour and interactive scenarios into a focused experience suitable for a public, high-throughput installation environment.
+	  </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">Simulation architecture</div>
+    <h2>From physical input to a responsive driving experience.</h2>
+    <p class="copy">The application connected player controls, vehicle behaviour, road systems, traffic logic and user feedback into a unified real-time Unity simulation.</p>
+
+    <div class="architecture">
+      <div class="flow">
+        <div class="node"><b>User Controls</b><span>Physical driving input</span></div>
+        <div class="node"><b>Input Processing</b><span>Unity input handling</span></div>
+        <div class="node"><b>Vehicle System</b><span>Real-time vehicle response</span></div>
+        <div class="node"><b>Road Environment</b><span>Routes and navigation context</span></div>
+        <div class="node"><b>Traffic Logic</b><span>Vehicles and driving scenarios</span></div>
+        <div class="node"><b>Feedback & UI</b><span>Guidance and user feedback</span></div>
+        <div class="node"><b>Simulator Display</b><span>PC installation output</span></div>
       </div>
     </div>
-  </section>
 
-  <section class="section-soft">
-    <div class="container">
-      <div style="margin-bottom:42px;max-width:760px">
-        <p class="section-label">My Role / Contribution</p>
-        <h2>Building the interactive driving experience.</h2>
-      </div>
-      <div class="contribution-grid">
-        <article class="card">
-          <h3>Unity Application Development</h3>
-          <p>Developed the core real-time application and integrated the systems required to deliver a complete interactive driving experience.</p>
-        </article>
-        <article class="card">
-          <h3>Vehicle Interaction</h3>
-          <p>Implemented vehicle input and response systems to create an intuitive connection between the physical controls and the virtual car.</p>
-        </article>
-        <article class="card">
-          <h3>Driving Environment</h3>
-          <p>Integrated the road environment, driving routes and surrounding elements to support clear navigation and believable spatial context.</p>
-        </article>
-        <article class="card">
-          <h3>Traffic & Scenario Logic</h3>
-          <p>Worked with gameplay and simulation logic to support traffic situations and structured driving scenarios for the learning experience.</p>
-        </article>
-        <article class="card">
-          <h3>UI & User Flow</h3>
-          <p>Developed user-facing flows and feedback designed to keep the experience accessible for young participants in a public installation.</p>
-        </article>
-        <article class="card">
-          <h3>Performance & Deployment</h3>
-          <p>Optimised the application for stable real-time performance on the target PC hardware used by the simulator installation.</p>
-        </article>
-      </div>
+    <div class="code-note">
+      The experience was designed as a complete interactive system rather than a simple driving game, combining physical interaction, simulation logic, environmental awareness and a repeatable public installation workflow.
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="container">
-      <div style="margin-bottom:42px;max-width:760px">
-        <p class="section-label">Key Features</p>
-        <h2>Simulation systems focused on interaction and awareness.</h2>
-      </div>
-      <div class="feature-list">
-        <article class="feature">
-          <h3>Interactive Vehicle Controls</h3>
-          <p>Responsive driving input translated into real-time vehicle behaviour inside the Unity simulation.</p>
-        </article>
-        <article class="feature">
-          <h3>Virtual Road Environment</h3>
-          <p>A structured 3D environment designed to provide clear driving routes and recognisable road context.</p>
-        </article>
-        <article class="feature">
-          <h3>Traffic Awareness</h3>
-          <p>Traffic situations and environmental cues supported the practice of observation, decision-making and road awareness.</p>
-        </article>
-        <article class="feature">
-          <h3>Scenario-Based Learning</h3>
-          <p>Driving interactions were organised around guided situations rather than an unrestricted open-world experience.</p>
-        </article>
-        <article class="feature">
-          <h3>Public Installation Workflow</h3>
-          <p>The experience was designed for repeatable sessions, simple onboarding and reliable operation in an interactive venue.</p>
-        </article>
-        <article class="feature">
-          <h3>Real-Time Optimisation</h3>
-          <p>Unity scene, asset and runtime considerations were applied to maintain a smooth and consistent experience on the target hardware.</p>
-        </article>
-      </div>
+<section class="section soft">
+  <div class="wrap">
+    <div class="eyebrow">Key capabilities</div>
+    <h2>Designed around interaction, awareness and repeatable learning.</h2>
+
+    <div class="feature-grid">
+      <article class="feature"><h3>Interactive Vehicle Controls</h3><p>Responsive driving input translated into real-time vehicle behaviour inside the Unity simulation.</p></article>
+      <article class="feature"><h3>Virtual Road Environment</h3><p>A structured 3D environment designed to provide clear driving routes and recognisable road context.</p></article>
+      <article class="feature"><h3>Traffic Awareness</h3><p>Traffic situations and environmental cues supported the practice of observation, decision-making and road awareness.</p></article>
+      <article class="feature"><h3>Scenario-Based Learning</h3><p>Driving interactions were organised around guided situations rather than an unrestricted open-world experience.</p></article>
+      <article class="feature"><h3>Public Installation Workflow</h3><p>The experience was designed for repeatable sessions, simple onboarding and reliable operation in an interactive venue.</p></article>
+      <article class="feature"><h3>Real-Time Optimisation</h3><p>Unity scene, asset and runtime considerations were applied to maintain a smooth and consistent experience on the target hardware.</p></article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section-soft">
-    <div class="container">
-      <div style="margin-bottom:42px;max-width:760px">
-        <p class="section-label">Project Gallery</p>
-        <h2>Inside the driving simulation.</h2>
-      </div>
-
-      <div class="gallery">
-        <figure class="shot">
-          <img src="images/cover.png" alt="NISSAN Driving Simulator overview">
-          <figcaption>Driving simulation overview.</figcaption>
-        </figure>
-        <div class="gallery-two">
-          <figure class="shot">
-            <img src="images/screenshot-01.png" alt="NISSAN Driving Simulator environment">
-            <figcaption>Interactive virtual driving environment.</figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="images/screenshot-02.png" alt="NISSAN Driving Simulator vehicle view">
-            <figcaption>Vehicle and road interaction.</figcaption>
-          </figure>
-        </div>
-        <figure class="shot">
-          <img src="images/screenshot-03.png" alt="NISSAN Driving Simulator gameplay">
-          <figcaption>Scenario-driven driving experience.</figcaption>
-        </figure>
-      </div>
+<section class="section">
+  <div class="wrap ">
+    <div>
+      <div class="eyebrow">My role</div>
+      <h2>Building the interactive driving experience.</h2>
     </div>
-  </section>
-
-  <section>
-    <div class="container section-grid">
-      <div>
-        <p class="section-label">Technologies Used</p>
-        <h2>Built for real-time interaction.</h2>
-      </div>
-      <div class="tags">
-        <span class="tag">Unity 3D</span>
-        <span class="tag">C#</span>
-        <span class="tag">PC Simulation</span>
-        <span class="tag">Vehicle Controls</span>
-        <span class="tag">Driving Physics</span>
-        <span class="tag">Traffic Systems</span>
-        <span class="tag">3D Environment</span>
-        <span class="tag">Interactive UI</span>
-        <span class="tag">Performance Optimisation</span>
-      </div>
+    <div class="responsibilities">
+      <article class="item"><h3>Unity application development</h3><p>Developed the core real-time application and integrated the systems required to deliver a complete interactive driving experience.</p></article>
+      <article class="item"><h3>Vehicle interaction</h3><p>Implemented vehicle input and response systems to create an intuitive connection between physical controls and the virtual car.</p></article>
+      <article class="item"><h3>Driving environment and scenarios</h3><p>Integrated the road environment, driving routes, traffic situations and supporting simulation logic for structured driving scenarios.</p></article>
+      <article class="item"><h3>UI, optimisation and deployment</h3><p>Developed user-facing flows and feedback while optimising the application for stable real-time performance on the target PC hardware.</p></article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section-soft">
-    <div class="container outcome">
-      <p class="section-label">Project Outcome</p>
+<section class="section soft">
+  <div class="wrap">
+    <div class="eyebrow">Project gallery</div>
+    <h2>Inside the driving simulation.</h2>
+
+    <div class="video-frame">
+      <iframe
+        src="https://player.vimeo.com/video/200988218"
+        title="NISSAN Driving Simulator"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Technology</div>
+      <h2>Built for real-time interaction.</h2>
+    </div>
+    <div class="stack">
+      <span>Unity 3D</span>
+      <span>C#</span>
+      <span>PC Simulation</span>
+      <span>Vehicle Controls</span>
+      <span>Driving Physics</span>
+      <span>Traffic Systems</span>
+      <span>3D Environment</span>
+      <span>Interactive UI</span>
+      <span>Performance Optimisation</span>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Project outcome</div>
       <h2>A controlled environment for practical driving awareness.</h2>
-      <p>
-        The NISSAN Driving Simulator transformed core driving concepts into an accessible interactive experience, allowing young participants to engage with vehicle control, road awareness and simulated traffic situations before encountering real-world driving conditions.
-      </p>
     </div>
-  </section>
+    <div class="copy">
+      The NISSAN Driving Simulator transformed core driving concepts into an accessible interactive experience, allowing young participants to engage with vehicle control, road awareness and simulated traffic situations before encountering real-world driving conditions.
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer>
-  <div class="container">NISSAN Driving Simulator · Unity 3D · PC</div>
+<footer class="footer">
+  <div class="wrap">
+    <p>NISSAN Driving Simulator · Unity 3D · PC · Interactive Training</p>
+  </div>
 </footer>
 
 </body>
