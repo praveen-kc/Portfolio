@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YUCAD Design Studio | Interactive 3D & VR Home Design</title>
+<style>
+:root{
+  --black:#050505; --text:#171717; --muted:#686868; --line:#e8e8e8;
+  --soft:#f7f7f7; --tag:#f1f1f1; --white:#fff; --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,"Segoe UI",Arial,Helvetica,sans-serif;background:var(--white);color:var(--text);line-height:1.65}
+.hero{background:var(--black);color:#fff;min-height:78vh;display:flex;align-items:center;padding:72px 28px}
+.container{width:min(var(--max),100%);margin:auto}
+.eyebrow,.label{font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.eyebrow{color:#b8b8b8;margin-bottom:20px}
+.hero h1{font-size:clamp(3rem,8vw,7rem);line-height:.98;letter-spacing:-.065em;max-width:1000px;margin:0 0 28px;font-weight:800}
+.hero h1 span{display:block;color:#9b9b9b}
+.hero p{font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.65;color:#c7c7c7;max-width:760px;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:52px;padding-top:24px;border-top:1px solid #292929;max-width:850px}
+.meta div{font-size:.82rem;color:#999}.meta strong{display:block;color:#fff;font-size:.9rem;margin-top:2px}
+section{padding:100px 28px}
+.section-head{display:grid;grid-template-columns:minmax(210px,.8fr) 2fr;gap:80px;align-items:start}
+.label{color:#777;padding-top:10px}
+h2{font-size:clamp(2rem,4vw,4rem);line-height:1.06;letter-spacing:-.045em;margin:0 0 26px}
+.copy{max-width:720px;font-size:1.08rem;color:#555}.copy p:first-child{margin-top:0}
+.copy strong{color:var(--text)}
+.alt{background:var(--soft)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px}
+.card{background:#fff;border:1px solid var(--line);padding:30px;min-height:190px}
+.card h3{font-size:1.1rem;margin:0 0 10px;letter-spacing:-.02em}
+.card p{margin:0;color:var(--muted);font-size:.96rem}
+.feature-list{margin-top:50px;border-top:1px solid var(--line)}
+.feature{display:grid;grid-template-columns:55px 1fr 1.5fr;gap:28px;padding:25px 0;border-bottom:1px solid var(--line);align-items:start}
+.feature-no{font-size:.82rem;color:#999;padding-top:4px}
+.feature h3{margin:0;font-size:1.05rem}.feature p{margin:0;color:var(--muted)}
+.gallery{padding-top:100px}
+.gallery-header{max-width:760px;margin:0 auto 50px}
+.gallery-header .label{display:block;margin-bottom:12px;padding:0}
+.shot{margin:0 0 30px}.shot img{display:block;width:100%;height:auto;border:1px solid #ededed;background:#f4f4f4}
+.shot figcaption{font-size:.85rem;color:#777;margin-top:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.tag{background:var(--tag);border:1px solid #e5e5e5;padding:8px 14px;border-radius:999px;font-size:.88rem;color:#444}
+.outcome{border-top:1px solid var(--line)}
+.outcome-box{max-width:850px;margin:auto;padding:10px 0}
+.outcome-box p{font-size:clamp(1.35rem,2.5vw,2rem);line-height:1.45;color:#303030;margin:20px 0 0;letter-spacing:-.025em}
+footer{padding:34px 28px 48px;border-top:1px solid var(--line);color:#8a8a8a;font-size:.82rem}
+@media(max-width:760px){
+  .hero{min-height:70vh;padding:58px 22px}.hero h1{font-size:clamp(3.1rem,15vw,5rem)}
+  section{padding:68px 22px}.section-head{grid-template-columns:1fr;gap:20px}
+  .grid,.two{grid-template-columns:1fr}.feature{grid-template-columns:38px 1fr;gap:10px 18px}
+  .feature p{grid-column:2}.meta{gap:20px}.gallery{padding-top:68px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">Interactive Interior Design & Immersive Visualization</div>
+    <h1>YUCAD <span>Design Studio</span></h1>
+    <p>A connected 3D home design platform that combined browser-based interior creation with a companion mobile and VR experience, allowing users to design, visualize and explore their spaces across multiple perspectives.</p>
+    <div class="meta">
+      <div>Project Type<strong>3D Design & VR Visualization</strong></div>
+      <div>Platform<strong>WebGL · Android · iOS</strong></div>
+      <div>Engine<strong>Unity 3D</strong></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="container section-head">
+    <div class="label">Project Overview</div>
+    <div class="copy">
+      <h2>From designing a room to stepping inside it.</h2>
+      <p>YUCAD combined two connected experiences into a single product ecosystem. <strong>YUCAD Design Studio</strong> provided an interactive browser-based environment for planning and customizing home interiors, while the <strong>YUCAD VR App</strong> extended those designs to mobile devices through 2D, 3D, top-down and immersive viewing modes.</p>
+      <p>The goal was to make interior design more accessible and visual—enabling users to experiment with layouts, furniture and finishes, then experience the resulting space from different viewpoints before making decisions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container section-head">
+    <div class="label">My Role</div>
+    <div>
+      <h2>Building the interactive design experience.</h2>
+      <div class="grid">
+        <article class="card"><h3>Technical Leadership</h3><p>Led the Unity development effort and coordinated implementation across Unity developers and 3D artists to maintain momentum across the product.</p></article>
+        <article class="card"><h3>Interactive 3D Systems</h3><p>Developed the core interaction workflows required for creating, modifying and visualizing interior layouts in real time.</p></article>
+        <article class="card"><h3>WebGL Integration</h3><p>Worked on the Unity WebGL experience and its connection with the surrounding web and e-commerce ecosystem.</p></article>
+        <article class="card"><h3>Mobile & VR Visualization</h3><p>Contributed to the companion application that allowed saved designs to be explored through multiple viewing modes, including immersive VR.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="label">Key Features</div>
+      <div><h2>One design, multiple ways to experience it.</h2></div>
+    </div>
+    <div class="feature-list">
+      <article class="feature"><div class="feature-no">01</div><h3>Interactive Interior Design</h3><p>Users could work directly with interior layouts and visual elements, creating and adjusting a room through an interactive 3D workflow.</p></article>
+      <article class="feature"><div class="feature-no">02</div><h3>2D & 3D Views</h3><p>The same design could be understood from floor-plan and three-dimensional perspectives, helping users move between planning and visualization.</p></article>
+      <article class="feature"><div class="feature-no">03</div><h3>Real-Time Visualization</h3><p>Furniture, materials and spatial arrangements were presented interactively, allowing design decisions to be evaluated immediately.</p></article>
+      <article class="feature"><div class="feature-no">04</div><h3>Mobile Design Viewer</h3><p>Saved YUCAD designs could be accessed through a companion mobile experience designed for convenient viewing and exploration.</p></article>
+      <article class="feature"><div class="feature-no">05</div><h3>Immersive VR Walkthrough</h3><p>The VR mode allowed users to move beyond a conventional screen-based preview and experience the scale and arrangement of the designed environment more directly.</p></article>
+      <article class="feature"><div class="feature-no">06</div><h3>Cross-Platform Delivery</h3><p>The project was built around a connected Unity workflow spanning browser, Android and iOS platforms.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="alt gallery">
+  <div class="container">
+    <div class="gallery-header">
+      <div class="label">Project Gallery</div>
+      <h2>Design, inspect and experience the space.</h2>
+    </div>
+
+    <figure class="shot">
+      <img src="images/cover.png" alt="YUCAD Design Studio interface showing a 3D interior scene">
+      <figcaption>YUCAD Design Studio — browser-based interactive 3D interior design.</figcaption>
+    </figure>
+
+    <div class="two">
+      <figure class="shot">
+        <img src="images/screenshot-01.png" alt="Top-down view of an interior layout">
+        <figcaption>Top-down perspective for understanding layout and spatial arrangement.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/screenshot-02.png" alt="Interactive 3D view of a furnished interior">
+        <figcaption>Real-time interior visualization with furniture and material detail.</figcaption>
+      </figure>
+    </div>
+
+    <figure class="shot">
+      <img src="images/screenshot-03.png" alt="Three-dimensional overview of the room">
+      <figcaption>3D overview for inspecting the complete environment and composition.</figcaption>
+    </figure>
+
+    <div class="two">
+      <figure class="shot">
+        <img src="images/screenshot-04.png" alt="Comparison view of interior design options">
+        <figcaption>Alternative visual views for comparing and reviewing design decisions.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/vr-app-cover.png" alt="YUCAD VR App showing an interior in immersive mode">
+        <figcaption>YUCAD VR App — extending the design experience to mobile and immersive viewing.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container section-head">
+    <div class="label">Technologies Used</div>
+    <div>
+      <h2>Built for interactive visualization across platforms.</h2>
+      <div class="tags">
+        <span class="tag">Unity 3D</span><span class="tag">C#</span><span class="tag">WebGL</span>
+        <span class="tag">Android</span><span class="tag">iOS</span><span class="tag">Virtual Reality</span>
+        <span class="tag">Interactive 3D</span><span class="tag">Real-Time Rendering</span>
+        <span class="tag">E-Commerce Integration</span><span class="tag">Performance Optimization</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="outcome alt">
+  <div class="container outcome-box">
+    <div class="label">Project Outcome</div>
+    <p>YUCAD brought together <strong>design creation and immersive visualization</strong> in a connected product experience—allowing users to move from planning an interior in a browser to viewing the same space in 2D, 3D and VR across mobile platforms.</p>
+  </div>
+</section>
+</main>
+
+<footer><div class="container">YUCAD Design Studio & YUCAD VR App — Project Case Study</div></footer>
+</body>
+</html>
