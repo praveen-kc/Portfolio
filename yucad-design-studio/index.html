@@ -12,6 +12,48 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Inter,"Segoe UI",Arial,Helvetica,sans-serif;background:var(--white);color:var(--text);line-height:1.65}
+.container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+nav {
+  height: 74px;
+  background: #050505;
+  color: #fff;
+  border-bottom: 1px solid #202020;
+}
+
+.nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: .98rem;
+  font-weight: 750;
+  letter-spacing: -.02em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+  color: #a7a7a7;
+  font-size: .88rem;
+}
+
+.nav-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
 .hero{background:var(--black);color:#fff;min-height:78vh;display:flex;align-items:center;padding:72px 28px}
 .container{width:min(var(--max),100%);margin:auto}
 .eyebrow,.label{font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
@@ -49,6 +91,14 @@ h2{font-size:clamp(2rem,4vw,4rem);line-height:1.06;letter-spacing:-.045em;margin
 .outcome-box p{font-size:clamp(1.35rem,2.5vw,2rem);line-height:1.45;color:#303030;margin:20px 0 0;letter-spacing:-.025em}
 footer{padding:34px 28px 48px;border-top:1px solid var(--line);color:#8a8a8a;font-size:.82rem}
 @media(max-width:760px){
+nav {
+    height: 62px;
+  }
+
+  .nav-links {
+    gap: 15px;
+    font-size: .78rem;
+  }
   .hero{min-height:70vh;padding:58px 22px}.hero h1{font-size:clamp(3.1rem,15vw,5rem)}
   section{padding:68px 22px}.section-head{grid-template-columns:1fr;gap:20px}
   .grid,.two{grid-template-columns:1fr}.feature{grid-template-columns:38px 1fr;gap:10px 18px}
@@ -57,7 +107,16 @@ footer{padding:34px 28px 48px;border-top:1px solid var(--line);color:#8a8a8a;fon
 </style>
 </head>
 <body>
-
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="./">PRAVEEN K C </a>
+    <div class="nav-links">
+      <a href="../#work">Work</a>
+      <a href="../#expertise">Expertise</a>
+      <a href="../#about">About</a>
+    </div>
+  </div>
+</nav>
 <header class="hero">
   <div class="container">
     <div class="eyebrow">Interactive Interior Design & Immersive Visualization</div>
