@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clite Virtual Lab — Case Study</title>
+<style>
+:root {
+  --black:#000;
+  --text:#171717;
+  --muted:#666;
+  --line:#e6e6e6;
+  --soft:#f7f7f7;
+  --max:1160px;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0; background:#fff; color:var(--text);
+  font-family:Inter, "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size:16px; line-height:1.75;
+}
+.hero {
+  min-height:78vh; background:var(--black); color:#fff;
+  display:flex; align-items:center;
+}
+.wrap { width:min(var(--max), calc(100% - 48px)); margin:0 auto; }
+.hero .wrap { padding:100px 0; }
+.eyebrow {
+  margin:0 0 24px; color:#b8b8b8; font-size:.75rem;
+  font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+}
+.hero h1 {
+  max-width:900px; margin:0; font-size:clamp(3.5rem, 9vw, 8rem);
+  line-height:.92; letter-spacing:-.065em; font-weight:800;
+}
+.hero .lead {
+  max-width:690px; margin:32px 0 0; color:#c5c5c5;
+  font-size:clamp(1.05rem, 1.8vw, 1.35rem); line-height:1.65;
+}
+.hero-meta {
+  display:flex; flex-wrap:wrap; gap:14px 34px; margin-top:56px;
+  padding-top:24px; border-top:1px solid #292929;
+  color:#bdbdbd; font-size:.85rem;
+}
+.hero-meta strong { color:#fff; margin-right:7px; }
+
+main section { padding:104px 0; }
+.section-label {
+  margin:0 0 14px; color:#777; font-size:.72rem; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase;
+}
+h2 {
+  margin:0; font-size:clamp(2rem, 4vw, 3.45rem); line-height:1.08;
+  letter-spacing:-.045em;
+}
+p { margin:0 0 20px; color:var(--muted); }
+.overview-grid {
+  display:grid; grid-template-columns:minmax(260px,.82fr) minmax(0,1.18fr);
+  gap:80px;
+}
+.overview-copy { padding-top:38px; font-size:1.06rem; }
+.overview-copy p:first-child { color:#303030; font-size:1.18rem; }
+
+.soft { background:var(--soft); }
+.cards {
+  display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:52px;
+}
+.card {
+  background:#fff; border:1px solid var(--line); padding:30px 30px 26px;
+  border-radius:8px;
+}
+.card h3, .feature h3 { margin:0 0 10px; font-size:1.08rem; line-height:1.35; }
+.card p, .feature p { margin:0; font-size:.96rem; }
+
+.features {
+  display:grid; grid-template-columns:repeat(2,1fr); gap:0 64px; margin-top:50px;
+}
+.feature {
+  padding:26px 0; border-top:1px solid var(--line);
+}
+.feature:nth-last-child(-n+2) { border-bottom:1px solid var(--line); }
+
+.gallery { padding-top:0; }
+.gallery-head { padding:104px 0 48px; }
+.gallery-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+.gallery-item { margin:0; }
+.gallery-item.wide { grid-column:1 / -1; }
+.gallery img {
+  width:100%; display:block; background:#eee; border:1px solid #ededed;
+}
+figcaption { margin-top:10px; color:#777; font-size:.82rem; line-height:1.5; }
+
+.tech-list {
+  display:flex; flex-wrap:wrap; gap:10px; margin-top:42px;
+}
+.tag {
+  padding:8px 14px; border:1px solid #ddd; border-radius:999px;
+  background:#f4f4f4; color:#404040; font-size:.88rem; line-height:1.2;
+}
+.summary {
+  border-top:1px solid var(--line); text-align:center;
+}
+.summary p { max-width:700px; margin:24px auto 0; font-size:1.08rem; }
+footer { padding:32px 24px 44px; text-align:center; color:#999; font-size:.78rem; }
+
+@media (max-width:760px) {
+  .wrap { width:min(100% - 36px, var(--max)); }
+  .hero { min-height:70vh; }
+  .hero .wrap { padding:78px 0; }
+  main section { padding:68px 0; }
+  .overview-grid, .cards, .features, .gallery-grid { grid-template-columns:1fr; gap:18px; }
+  .overview-grid { gap:28px; }
+  .overview-copy { padding-top:0; }
+  .gallery-head { padding:68px 0 32px; }
+  .gallery-item.wide { grid-column:auto; }
+  .feature:nth-last-child(-n+2) { border-bottom:0; }
+  .feature:last-child { border-bottom:1px solid var(--line); }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Interactive Learning Platform</p>
+    <h1>Clite<br>Virtual Lab</h1>
+    <p class="lead">An interactive virtual laboratory experience that brings practical science experiments and equipment-based learning into an accessible digital environment.</p>
+    <div class="hero-meta">
+      <span><strong>Project Type</strong> Virtual Laboratory</span>
+      <span><strong>Platform</strong> Interactive 3D Application</span>
+      <span><strong>Focus</strong> Simulation & Learning</span>
+    </div>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap overview-grid">
+    <div>
+      <p class="section-label">Project Overview</p>
+      <h2>Practical learning in a virtual environment.</h2>
+    </div>
+    <div class="overview-copy">
+      <p>Clite Virtual Lab was designed to present laboratory exercises as guided, interactive experiences rather than static instructional content.</p>
+      <p>The application provides a structured journey from lab selection and experiment access through to hands-on interaction with virtual equipment. Students can explore experiments, follow the required workflow and engage with simulation-driven activities inside a visual laboratory environment.</p>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <p class="section-label">My Role / Contribution</p>
+    <h2>Building the interactive experience.</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Unity Application Development</h3>
+        <p>Developed and integrated the core Unity-based application systems supporting the virtual laboratory experience.</p>
+      </article>
+      <article class="card">
+        <h3>Interactive Simulation</h3>
+        <p>Implemented interaction flows that allow learners to engage with laboratory equipment and experiment steps in a guided digital environment.</p>
+      </article>
+      <article class="card">
+        <h3>UI & Learning Flow</h3>
+        <p>Worked on application screens and navigation that connect login, lab selection, experiment access and simulation activities.</p>
+      </article>
+      <article class="card">
+        <h3>3D Scene Integration</h3>
+        <p>Integrated laboratory environments, equipment and interactive visual elements into a cohesive real-time application.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="section-label">Key Features</p>
+    <h2>Simulation designed around interaction.</h2>
+    <div class="features">
+      <article class="feature">
+        <h3>Virtual Laboratory Selection</h3>
+        <p>Users can browse available laboratory content and move into individual learning experiences from a central interface.</p>
+      </article>
+      <article class="feature">
+        <h3>Interactive Equipment</h3>
+        <p>Laboratory objects and instruments are presented as interactive elements within the simulated workspace.</p>
+      </article>
+      <article class="feature">
+        <h3>Guided Experiment Workflow</h3>
+        <p>Experiment activities are structured around clear steps to help learners progress through the intended procedure.</p>
+      </article>
+      <article class="feature">
+        <h3>Real-Time Visual Feedback</h3>
+        <p>UI panels, instructions and simulation states provide contextual feedback during interaction.</p>
+      </article>
+      <article class="feature">
+        <h3>Multiple Learning Modules</h3>
+        <p>The platform structure supports different labs and experiment categories through a consistent application experience.</p>
+      </article>
+      <article class="feature">
+        <h3>Immersive 3D Presentation</h3>
+        <p>Real-time 3D scenes make equipment, experimental setups and procedural interactions easier to visualize.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="gallery soft">
+  <div class="wrap">
+    <div class="gallery-head">
+      <p class="section-label">Project Screens</p>
+      <h2>Inside the virtual laboratory.</h2>
+    </div>
+    <div class="gallery-grid">
+      <figure class="gallery-item wide"><img src="images/cover.jpg" alt="Clite Virtual Lab introduction screen"></figure>
+      <figure class="gallery-item"><img src="images/screenshot-01.jpg" alt="Virtual lab selection interface"><figcaption>Laboratory and experiment selection.</figcaption></figure>
+      <figure class="gallery-item"><img src="images/screenshot-02.jpg" alt="Physics experiment selection"><figcaption>Module selection and learning content.</figcaption></figure>
+      <figure class="gallery-item wide"><img src="images/screenshot-03.jpg" alt="Interactive laboratory simulation"></figure>
+      <figure class="gallery-item"><img src="images/screenshot-04.jpg" alt="Interactive specimen view"><figcaption>Detailed interactive visual content.</figcaption></figure>
+      <figure class="gallery-item"><img src="images/screenshot-05.jpg" alt="Laboratory experiment setup"><figcaption>Equipment-based experiment setup.</figcaption></figure>
+      <figure class="gallery-item"><img src="images/screenshot-06.jpg" alt="Virtual laboratory apparatus"></figure>
+      <figure class="gallery-item"><img src="images/screenshot-07.jpg" alt="Microscope simulation"></figure>
+      <figure class="gallery-item"><img src="images/screenshot-08.jpg" alt="Interactive laboratory scene"></figure>
+      <figure class="gallery-item"><img src="images/screenshot-09.jpg" alt="Measurement simulation"></figure>
+      <figure class="gallery-item wide"><img src="images/screenshot-10.jpg" alt="Clite Virtual Lab login screen"></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="section-label">Technologies Used</p>
+    <h2>Built with real-time interactive technology.</h2>
+    <div class="tech-list">
+      <span class="tag">Unity 3D</span>
+      <span class="tag">C#</span>
+      <span class="tag">Interactive 3D</span>
+      <span class="tag">Virtual Laboratory</span>
+      <span class="tag">Simulation</span>
+      <span class="tag">Physics Interaction</span>
+      <span class="tag">Custom UI</span>
+      <span class="tag">Real-Time Rendering</span>
+      <span class="tag">Educational Technology</span>
+    </div>
+  </div>
+</section>
+
+<section class="summary">
+  <div class="wrap">
+    <p class="section-label">Project Outcome</p>
+    <h2>A reusable digital space for practical learning.</h2>
+    <p>Clite Virtual Lab demonstrates how real-time 3D technology can make practical laboratory concepts more accessible by combining structured learning content with interactive simulation and visual experimentation.</p>
+  </div>
+</section>
+</main>
+
+<footer>Clite Virtual Lab — Project Case Study</footer>
+</body>
+</html>
