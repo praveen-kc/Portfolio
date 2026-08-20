@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conversational AI Avatar | Praveen K C</title>
+<style>
+:root{
+  --ink:#141414;--muted:#686868;--line:#e8e8e8;--paper:#fff;
+  --soft:#f7f7f7;--accent:#3f7cff;--dark:#070809;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65}
+.hero{
+  position:relative;min-height:82vh;display:flex;align-items:flex-end;
+  overflow:hidden;background:#08090b;color:#fff;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.76) 38%,rgba(0,0,0,.12) 72%),
+    url("images/cover.png") right center/auto 100% no-repeat;
+  opacity:.95;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.78),transparent 58%);
+}
+.hero-content{position:relative;z-index:2;width:min(1180px,92%);margin:0 auto;padding:76px 0}
+.kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#c8c8c8;margin-bottom:18px}
+h1{font-size:clamp(3.2rem,8vw,7.4rem);line-height:.92;letter-spacing:-.06em;margin:0 0 24px;max-width:920px}
+.hero p{max-width:650px;color:#e5e5e5;font-size:1.15rem;margin:0}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.tag{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:7px 13px;font-size:.8rem;background:rgba(255,255,255,.04)}
+.wrap{width:min(1100px,90%);margin:auto}
+.intro{padding:105px 0 82px}
+.eyebrow{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h2{font-size:clamp(2rem,4vw,4rem);line-height:1.05;letter-spacing:-.045em;margin:10px 0 25px}
+.lead{font-size:1.28rem;max-width:880px;color:#383838}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:36px}
+.stat{background:#fff;padding:27px}
+.stat b{display:block;font-size:1.55rem;margin-bottom:4px}
+.stat span{font-size:.86rem;color:var(--muted)}
+.section{padding:88px 0;border-top:1px solid var(--line)}
+.soft{background:var(--soft)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start}
+.copy{font-size:1.05rem;color:#464646}
+.item{padding:24px 0;border-bottom:1px solid var(--line)}
+.item:first-child{border-top:1px solid var(--line)}
+.item h3{font-size:1.1rem;margin:0 0 7px}
+.item p{margin:0;color:var(--muted)}
+.architecture{
+  border:1px solid var(--line);background:#fff;padding:34px;margin-top:32px
+}
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.node{
+  flex:1 1 150px;min-height:116px;padding:20px;
+  border:1px solid var(--line);margin:-1px 0 0 -1px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.node b{font-size:1rem;margin-bottom:4px}
+.node span{font-size:.82rem;color:var(--muted)}
+.flow-arrow{display:none}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:30px}
+.feature{background:#fff;padding:28px}
+.feature h3{margin:0 0 10px;font-size:1.05rem}
+.feature p{margin:0;color:var(--muted);font-size:.94rem}
+.stack{display:flex;gap:10px;flex-wrap:wrap}
+.stack span{padding:10px 15px;background:#fff;border:1px solid var(--line);font-size:.86rem}
+.code-note{padding:22px 25px;border-left:3px solid var(--accent);background:#fff;margin-top:28px;color:#555}
+.footer{background:#090909;color:#fff;padding:60px 0}
+.footer p{color:#aaa;margin:0}
+@media(max-width:780px){
+  .hero{min-height:76vh}
+  .hero::before{background:linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.5)),url("images/cover.png") 68% center/auto 100% no-repeat}
+  .hero-content{padding:58px 0}
+  .intro,.section{padding:66px 0}
+  .grid2{grid-template-columns:1fr;gap:35px}
+  .stats,.feature-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="kicker">Personal Project · 2026</div>
+    <h1>Conversational<br>AI Avatar</h1>
+    <p>A real-time conversational AI system that combines speech recognition, large language models, text-to-speech, retrieval, emotion, and avatar state into a unified interactive experience.</p>
+    <div class="meta">
+      <span class="tag">Python</span>
+      <span class="tag">Conversational AI</span>
+      <span class="tag">Voice AI</span>
+      <span class="tag">LLM</span>
+      <span class="tag">Unity Integration</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="intro">
+  <div class="wrap">
+    <div class="eyebrow">The project</div>
+    <h2>An AI persona designed for natural, real-time conversation.</h2>
+    <p class="lead">The project explores how a digital avatar can listen, understand context, retrieve relevant personal knowledge, generate a response, determine emotional state, and speak back in a natural voice—all as part of a real-time conversational pipeline.</p>
+
+    <div class="stats">
+      <div class="stat"><b>Local STT</b><span>GPU-accelerated speech recognition</span></div>
+      <div class="stat"><b>RAG Memory</b><span>Persona-aware knowledge retrieval</span></div>
+      <div class="stat"><b>Real-time</b><span>Socket-based avatar communication</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap grid2">
+    <div>
+      <div class="eyebrow">The challenge</div>
+      <h2>Conversation is more than sending text to an LLM.</h2>
+    </div>
+    <div class="copy">
+      A convincing conversational avatar requires several independent systems to operate as one experience. Speech must be transcribed accurately, the AI needs relevant persona context, responses must be generated with low enough latency, and the result must drive voice, emotion, and avatar behaviour consistently.
+      <br><br>
+      The architecture was designed to keep these systems modular while exposing a simple real-time interface to browser and Unity clients.
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">System architecture</div>
+    <h2>From voice input to an animated response.</h2>
+    <p class="copy">The backend coordinates the conversational pipeline and returns structured avatar responses containing generated text, emotion, audio, and animation-related state.</p>
+
+    <div class="architecture">
+      <div class="flow">
+        <div class="node"><b>User Voice</b><span>Microphone input</span></div>
+        <div class="node"><b>Speech-to-Text</b><span>faster-whisper</span></div>
+        <div class="node"><b>Knowledge Retrieval</b><span>ChromaDB + embeddings</span></div>
+        <div class="node"><b>LLM</b><span>Context-aware response generation</span></div>
+        <div class="node"><b>Emotion & State</b><span>Avatar response metadata</span></div>
+        <div class="node"><b>Text-to-Speech</b><span>edge-tts audio generation</span></div>
+        <div class="node"><b>Avatar Client</b><span>Browser / Unity</span></div>
+      </div>
+    </div>
+
+    <div class="code-note">
+      The client-facing response model is designed around more than plain text: each response can include the generated dialogue, emotional state, audio output, and animation information needed by the avatar.
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap">
+    <div class="eyebrow">Key capabilities</div>
+    <h2>Designed as a complete conversational pipeline.</h2>
+
+    <div class="feature-grid">
+      <article class="feature"><h3>Voice Conversation</h3><p>Transforms spoken user input into conversational AI responses using a speech-to-text and text-to-speech pipeline.</p></article>
+      <article class="feature"><h3>Persona Knowledge</h3><p>Uses vector retrieval to supply relevant background information about the persona and its experience.</p></article>
+      <article class="feature"><h3>Emotion-Aware Output</h3><p>Returns emotional and behavioural metadata that can be mapped to avatar expressions and animations.</p></article>
+      <article class="feature"><h3>Local AI Components</h3><p>Runs speech recognition, embeddings, vector storage, and supporting services locally where practical.</p></article>
+      <article class="feature"><h3>Real-time Events</h3><p>Uses asynchronous communication and Socket.IO events to connect the AI backend with interactive clients.</p></article>
+      <article class="feature"><h3>Person Detection</h3><p>Supports webcam-based person detection as a trigger for initiating the conversational experience.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap grid2">
+    <div>
+      <div class="eyebrow">My role</div>
+      <h2>Architecture, AI integration, and interactive experience design.</h2>
+    </div>
+    <div class="responsibilities">
+      <article class="item"><h3>System architecture</h3><p>Designed the modular backend architecture connecting STT, LLM, RAG, TTS, database, detection, and client communication layers.</p></article>
+      <article class="item"><h3>AI pipeline integration</h3><p>Integrated local and API-based AI services into a unified asynchronous conversation workflow.</p></article>
+      <article class="item"><h3>Persona and retrieval design</h3><p>Structured persona knowledge for retrieval so the AI can respond using relevant project, professional, and contextual information.</p></article>
+      <article class="item"><h3>Client integration</h3><p>Designed the communication contract for browser and Unity clients to receive avatar responses and associated audio and state data.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap grid2">
+    <div>
+      <div class="eyebrow">Technology</div>
+      <h2>Built from modular AI and interactive technologies.</h2>
+    </div>
+    <div class="stack">
+      <span>Python</span>
+      <span>aiohttp</span>
+      <span>Socket.IO</span>
+      <span>faster-whisper</span>
+      <span>PyTorch + CUDA</span>
+      <span>OpenRouter</span>
+      <span>Gemma</span>
+      <span>edge-tts</span>
+      <span>ChromaDB</span>
+      <span>sentence-transformers</span>
+      <span>MongoDB</span>
+      <span>YOLO</span>
+      <span>Unity</span>
+      <span>WebRTC / Browser Media</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Conversational AI Avatar · Voice AI · RAG · Real-time Interactive Systems</p>
+  </div>
+</footer>
+
+</body>
+</html>
